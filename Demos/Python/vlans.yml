@@ -1,0 +1,19 @@
+---
+vlans:
+  - id: 10
+    name: VLAN_10
+  - id: 20
+    name: VLAN_20
+  - id: 30
+    name: VLAN_30
+  - id: 40
+    name: VLAN_40
+  - id: 50
+    name: VLAN_50
+  - id: 60
+    name: VLAN_60
+switches:
+  - leaf1
+  - leaf2
+  - leaf3
+  - leaf4

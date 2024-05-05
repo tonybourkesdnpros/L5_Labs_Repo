@@ -1,10 +1,23 @@
 CVP_CONFIGLETS:
+  dummy_configlet: "alias dummy show ip interface brief"
 
-
+CONTAINERS_DUMMY:
+  Spine:
+      parentContainerName: Tenant
+      configlets: 
+        - dummy_configlet
+  Leaf:
+      parentContainerName: Tenant
+      configlets: 
+        - dummy_configlet
+  Borderleaf:
+      parentContainerName: Tenant
+      configlets: 
+        - dummy_configlet
+  Hosts:
+      parentContainerName: Tenant
 
 CONTAINERS_DEFAULT:
-  DC1:
-      parentContainerName: Tenant
   Spine:
       parentContainerName: Tenant
   Leaf:
@@ -65,3 +78,11 @@ CVP_DEVICES_DEFAULT:
     configlets:
       - 'ATD-INFRA'
       - 'borderleaf2-base'
+VALIDATE_DEVICES:
+  - device_name: leaf1
+    search_type: hostname
+    cvp_configlets:
+      - 'ATD-INFRA'
+      - 'leaf1-base'
+  
+
